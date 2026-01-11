@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Letter</title>
+<style>
+body{
+  background:#0b0b15;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:sans-serif;
+}
+.wrapper{
+  position:relative;
+}
+.envelope{
+  width:260px;
+  height:160px;
+  background:#ffd1dc;
+  position:relative;
+  cursor:pointer;
+}
+.envelope:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0;
+  height:0;
+  border-left:130px solid transparent;
+  border-right:130px solid transparent;
+  border-top:80px solid #ff9eb5;
+}
+.letter{
+  position:absolute;
+  top:20px;
+  left:15px;
+  width:230px;
+  height:120px;
+  background:white;
+  text-align:center;
+  padding-top:40px;
+  transform:translateY(60px);
+  transition:0.6s;
+  opacity:0;
+}
+.open .letter{
+  transform:translateY(-20px);
+  opacity:1;
+}
+button{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper" id="wrap">
+  <div class="envelope"></div>
+  <div class="letter">
+    💖 Happy Valentine’s Day 💖
+  </div>
+  <button onclick="openLetter()">Open</button>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById("wrap").classList.add("open");
+}
+</script>
+
+</body>
+</html>
